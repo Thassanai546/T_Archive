@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final's Sanctuary</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" />
+    <link rel="icon" type="image/png" href="img/Static_sanctuary.png" />
+    <!-- Favicon -->
+
+    <!-- Howya! -->
+
+    <!-- Layout inspired by [https://o.mg.lol/], [https://twitter.com/netspooky], [https://sinewave.cyou/] -->
+    <style>
+      body {
+        color: #fefefe;
+        background-color: #0c0d10;
+      }
+
+      .body-content {
+        display: flex;
+        border: 1px solid rgb(0, 255, 0);
+        padding: 5px;
+        /*Please work*/
+        display: flex;
+        flex-wrap: wrap;
+
+        /*Horizontal center align*/
+        justify-content: center;
+      }
+
+      @font-face {
+        font-family: "gohu";
+        src: url("gohu.woff") format("woff");
+      }
+
+      pre {
+        font-family: "gohu", "Lucida Console", monospace, Monaco;
+        font-size: 14px;
+        line-height: 1;
+        -webkit-text-size-adjust: 140%;
+      }
+
+      a {
+        /*Color for links*/
+        color: #fbff00;
+        text-decoration: none;
+      }
+
+      .container {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+
+      .highlight {
+        color: #19ff04;
+      }
+      body {
+      color: #fefefe;
+      background-color: #0c0d10;
+    }
+
+    pre {
+      font-family: "gohu", "Lucida Console", monospace, Monaco;
+      font-size: 14px;
+      line-height: 1;
+      -webkit-text-size-adjust: 140%;
+    }
+
+    a {
+      color: #fbff00;
+      text-decoration: none;
+    }
+
+    .centered-container {
+      text-align: center;
+    }
+
+    .instructions {
+      text-align: left;
+      display: inline-block;
+    }
+
+    .binary-instruction {
+      background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <div class="container">
+        <div style="display: inline-block; text-align: left">
+          <pre><center><img src="img/DOMAIN.gif" width="150" style="border-radius: 10px;"> <!-- Probably best to leave "pre" alone.--> 
+  </center>	
+                   ┌───────────────────────────────────────────┐
+                   │<a href="blog_dir/blog.html">    BLOG    </a> │<a href="https://github.com/Thassanai546">    GITHUB    </a>│<a href="https://steamcommunity.com/id/thaszprofile/">    STEAM     </a>│
+                   └───────────────────────────────────────────┘
+                   <div style="display: flex; flex-direction: column; align-items: center;">
+                    <pre style="margin-bottom: 5px; background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> 
+     _______             __                              __                        
+    / ____(_)___  ____ _/ /____   _________ _____  _____/ /___  ______ ________  __
+   / /_  / / __ \/ __ `/ / ___/  / ___/ __ `/ __ \/ ___/ __/ / / / __ `/ ___/ / / /
+  / __/ / / / / / /_/ / (__  )  (__  ) /_/ / / / / /__/ /_/ /_/ / /_/ / /  / /_/ / 
+ /_/   /_/_/ /_/\__,_/_/____/  /____/\__,_/_/ /_/\___/\__/\__,_/\__,_/_/   \__, /  
+                                                                          /____/
+                    </pre>
+                  </div>
+</pre>
+    </center>
+    <br />
+    <div class="centered-container">
+        <pre class="instructions">
+          --- Assembly Instructions ---
+          
+
+          Logical instructions:
+        
+            <span class="binary-instruction">and</span>:  performs a bitwise AND between two operands and stores the result in the destination operand.
+            <span class="binary-instruction">or</span>:   performs a bitwise OR between two operands and stores the result in the destination operand.
+            <span class="binary-instruction">xor</span>:  performs a bitwise XOR between two operands and stores the result in the destination operand.
+            <span class="binary-instruction">not</span>:  performs a bitwise NOT on the operand.
+            <span class="binary-instruction">test</span>: performs a bitwise AND between two operands but does not store the result.
+      
+          Arithmetic instructions:
+      
+            <span class="binary-instruction">add</span>: adds two operands and stores the result in the destination operand.
+            <span class="binary-instruction">sub</span>: subtracts the second operand from the first operand and stores the result in the destination operand.
+            <span class="binary-instruction">mul</span>: multiplies two operands and stores the result in the destination operand.
+            <span class="binary-instruction">div</span>: divides the first operand by the second operand and stores the quotient in the destination operand.
+            <span class="binary-instruction">inc</span>: increments the value of the operand by 1.
+            <span class="binary-instruction">dec</span>: decrements the value of the operand by 1.
+      
+          Control flow instructions:
+      
+            <span class="binary-instruction">jmp</span>:      transfers control to the specified address.
+            <span class="binary-instruction">je, jz</span>:   jumps if the zero flag is set (i.e., if the operands are equal).
+            <span class="binary-instruction">jne, jnz</span>: jumps if the zero flag is not set (i.e., if the operands are not equal).
+            <span class="binary-instruction">jl, jng</span>:  jumps if the sign flag is set (i.e., if the result of a signed operation is negative).
+            <span class="binary-instruction">jg, jnl</span>:  jumps if the sign flag is not set (i.e., if the result of a signed operation is positive or zero).
+            <span class="binary-instruction">call</span>:     calls a procedure at the specified address and pushes the return address onto the stack.
+        </pre>
+      </div>      
+  </body>
+</html>
