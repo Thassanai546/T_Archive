@@ -1,77 +1,90 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Final's Sanctuary</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" />
+    <link rel="icon" type="image/png" href="img/Static_sanctuary.png" />
+    <!-- Favicon -->
 
-<head>
-  <title>Final's Sanctuary</title>
-  <meta charset="utf-8">
-  <meta name="viewport">
-  <link rel="icon" type="image/png" href="img/Static_sanctuary.png"> <!-- Favicon -->
-  <style>
-    body {
-      color: #FEFEFE;
-      background-color: #0c0d10;
-    }
+    <!-- Howya! -->
 
-    @font-face {
-      font-family: "gohu";
-      src: url("gohu.woff") format('woff');
-    }
-
-    pre {
-      font-family: "gohu", "Lucida Console", monospace, Monaco;
-      font-size: 14px;
-      line-height: 1.0;
-      -webkit-text-size-adjust: 140%;
-    }
-
-    a {
-      color: #fbff00;
-      text-decoration: none;
-    }
-
-    .container {
-      margin-right: 0px;
-      margin-left: 0px;
-    }
-
-    @media (min-width: 992px) {
-      .container {
-        width: 970px;
+    <!-- Layout inspired by [https://o.mg.lol/], [https://twitter.com/netspooky], [https://sinewave.cyou/] -->
+    <style>
+      body {
+        color: #fefefe;
+        background-color: #0c0d10;
       }
-    }
 
-    @media (min-width: 1200px) {
-      .container {
-        width: 1170px;
+      @font-face {
+        font-family: "gohu";
+        src: url("gohu.woff") format("woff");
       }
-    }
 
-    .highlight {
-      color: #19ff04;
-    }
+      pre {
+        font-family: "gohu", "Lucida Console", monospace, Monaco;
+        font-size: 14px;
+        line-height: 1;
+        -webkit-text-size-adjust: 140%;
+      }
 
-    .image-container {
-      display: flex;
-      border: 1px solid rgb(0, 255, 0);
-      padding: 5px;
-      /*Please work*/
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center; /*Horizontal center align*/
-    }
+      a {
+        /*Color for links*/
+        color: #fbff00;
+        text-decoration: none;
+      }
 
-    .image-container img {
-      max-width: 100%;
-      height: 65px;
-      margin: 10px;
-    }
-  </style>
-</head>
+      .container {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
 
-<body>
-  <center>
-	  <div class='container'>
-      <div style="display: inline-block; text-align: left;"><pre><center> <img src="img/DOMAIN.gif" width="150" style="border-radius: 10px;">
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+
+      .highlight {
+        color: #19ff04;
+      }
+
+      .image-container {
+        display: flex;
+        border: 1px solid rgb(0, 255, 0);
+        padding: 5px;
+        /*Please work*/
+        display: flex;
+        flex-wrap: wrap;
+
+        /*Horizontal center align*/
+        justify-content: center;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: 65px;
+        margin: 10px;
+      }
+
+      .rounded-image {
+        border-radius: 20%;
+        overflow: hidden; /* Used at end of page */
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <div class="container">
+        <div style="display: inline-block; text-align: left">
+          <pre><center> <img src="img/DOMAIN.gif" width="150" style="border-radius: 10px;"> <!-- Probably best to leave "pre" alone.--> 
   </center>	
                    ┌───────────────────────────────────────────┐
                    │<a href="blog_dir/blog.html">    BLOG    </a> │<a href="https://github.com/Thassanai546">    GITHUB    </a>│<a href="https://steamcommunity.com/id/thaszprofile/">    STEAM     </a>│
@@ -114,35 +127,50 @@
 │                                                                              │
 │  <span class="highlight">COOL LINKS?</span>                                                                 │
 │                                                                              │
-│  Email encryption standing the test of time: [<a href="https://www.openpgp.org/" target="_blank"> OpenPGP </a>]                     │
+│  Email encryption standing the test of time:. . . [<a href="https://www.openpgp.org/" target="_blank"> OpenPGP </a>]                │
 │                                                                              │
-│  Squid Balisongs:          [<a href="https://www.squidindustries.co/" target="_blank"> Squid Industries </a>]                              │
+│  Squid Balisongs:. . . . . . . . . . . . . . . . .[<a href="https://www.squidindustries.co/" target="_blank"> Squid Industries </a>]       │
 │                                                                              │
-│  Block Invisible trackers: [<a href="https://privacybadger.org/" target="_blank"> Privacy Badger </a>]                                │
+│  Block Invisible trackers:. . . . . . . . . . . . [<a href="https://privacybadger.org/" target="_blank"> Privacy Badger </a>]         │
 │                                                                              │
-│  Open-source ad blocker:   [<a href="https://ublockorigin.com/" target="_blank"> uBlock </a>]                                        │
+│  Open-source ad blocker:. . . . . . . . . . . . . [<a href="https://ublockorigin.com/" target="_blank"> uBlock </a>]                 │
 │                                                                              │
-│  Free Photoshop:           [<a href="https://www.photopea.com/" target="_blank"> Photopea </a>]                                      │
+│  Free Photoshop:. . . . . . . . . . . . . . . . . [<a href="https://www.photopea.com/" target="_blank"> Photopea </a>]               │
 │                                                                              │
-│  Burner Emails:            [<a href="https://temp-mail.org/en/" target="_blank"> Temp Mail </a>]                                     │
+│  Burner Emails:. . . . . . . . . . . . . . . . . .[<a href="https://temp-mail.org/en/" target="_blank"> Temp Mail </a>]              │
 │                                                                              │
-│  Staple IEM's:             [<a href="https://www.thieaudio.com/" target="_blank"> THIEAUDIO </a>]                                     │
+│  Staple IEM's:. . . . . . . . . . . . . . . . . . [<a href="https://www.thieaudio.com/" target="_blank"> THIEAUDIO </a>]              │
+│                                                                              │
+│  Other useful/interesting links:. . . . . . . . . [<a href="" target="_blank"> Soon </a>]                   │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 </pre>
-    </div>
-      <div class="image-container">
-        <img src="img/thieaudio.webp" alt="Footer Image">
-        <img src="img/fiio_logo.png" alt="Footer Image">
-        <img src="img/ibm.png" alt="Footer Image">
-        <img src="img/logo2.jpg" alt="Footer Image">
-        <img src="img/phantomGif.gif" alt="Footer Image">
-        <img src="img/CS.png" alt="Footer Image">
-        <img src="img/wrc_white.png" alt="Footer Image">
-        <img src="img/gmmk.jpg" alt="Footer Image">
+          <!-- Footer images -->
+        </div>
+        <div class="image-container">
+          <img src="img/thieaudio.webp" alt="Footer Image" />
+          <img src="img/fiio_logo.png" alt="Footer Image" />
+          <img src="img/ibm_gif.gif" alt="Footer Image" />
+          <img src="img/logo2.jpg" alt="Footer Image" />
+          <img src="img/phantomGif.gif" alt="Footer Image" />
+          <img src="img/CS.png" alt="Footer Image" />
+          <img src="img/wrc_white.png" alt="Footer Image" />
+          <img src="img/gmmk.jpg" alt="Footer Image" />
+          <img src="img/exalted_oryx.png" alt="Footer Image" />
+        </div>
       </div>
-    </div>
-  </center>
-</body>
+    </center>
+    <br />
+    <center>
+      <pre>Wanna hack?<a href="https://shop.hak5.org/"> Hak5</a></pre>
+      <br /><br />
+      <img
+        src="img/Avatar of the Accursed King - Idle.gif"
+        alt="Avatar of the Accursed King"
+        class="rounded-image"
+      />
+    </center>
+    <br />
+  </body>
 </html>
