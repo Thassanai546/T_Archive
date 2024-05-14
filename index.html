@@ -1,64 +1,80 @@
+<!DOCTYPE html>
 <html>
-  <! -- layout design heavily borrowed from https://twitter.com/netspooky and https://o.mg.lol/>
 
-  <head>
-    <title>Final's Sanctuary</title>
-    <meta charset="utf-8">
-    <meta name="viewport">
-    <link rel="icon" type="image/png" href="img/Static_sanctuary.png"> <!-- Change "favicon.png" to your favicon file name -->
-    <style>
-      body {
-        color: #FEFEFE;
-        background-color: #0c0d10;
-      }
-      
-      @font-face {
-        font-family: "gohu";
-        src: url("gohu.woff") format('woff');
-      }
-      
-      pre {
-        font-family: "gohu", "Lucida Console", monospace, Monaco;
-        font-size: 14px;
-        line-height: 1.0;
-		-webkit-text-size-adjust: 140%;
-      }
-      
-      a {
-        color: #fffb00;
-        text-decoration: none;
-      }
-      
+<head>
+  <title>Final's Sanctuary</title>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <link rel="icon" type="image/png" href="img/Static_sanctuary.png"> <!-- Favicon -->
+  <style>
+    body {
+      color: #FEFEFE;
+      background-color: #0c0d10;
+    }
+
+    @font-face {
+      font-family: "gohu";
+      src: url("gohu.woff") format('woff');
+    }
+
+    pre {
+      font-family: "gohu", "Lucida Console", monospace, Monaco;
+      font-size: 14px;
+      line-height: 1.0;
+      -webkit-text-size-adjust: 140%;
+    }
+
+    a {
+      color: #fbff00;
+      text-decoration: none;
+    }
+
+    .container {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    @media (min-width: 992px) {
       .container {
-        margin-right: 0px;
-        margin-left: 0px;
+        width: 970px;
       }
-      
+    }
 
-      @media (min-width: 992px) {
-        .container {
-          width: 970px;
-        }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
       }
-      
-      @media (min-width: 1200px) {
-        .container {
-          width: 1170px;
-        }
-      }
-      .highlight {
-        color: #19ff04;
-      }
-    </style>
-  </head>
+    }
 
-  <body>
-    <center>
-	    <div class='container'>
-        <div style="display: inline-block; text-align: left;"><pre><center> <img src="img/DOMAIN.gif" width="150" style="border-radius: 10px;">
-    </center>	
+    .highlight {
+      color: #19ff04;
+    }
+
+    .image-container {
+      display: flex;
+      border: 1px solid rgb(0, 255, 0);
+      padding: 5px;
+      /*Please work*/
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /*Horizontal center align*/
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: 65px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+	  <div class='container'>
+      <div style="display: inline-block; text-align: left;"><pre><center> <img src="img/DOMAIN.gif" width="150" style="border-radius: 10px;">
+  </center>	
                    ┌───────────────────────────────────────────┐
-                   │<a href="blog.html">    BLOG    </a> │<a href="https://github.com/Thassanai546">    GITHUB    </a>│<a href="https://steamcommunity.com/id/thaszprofile/">    STEAM     </a>│
+                   │<a href="blog_dir/blog.html">    BLOG    </a> │<a href="https://github.com/Thassanai546">    GITHUB    </a>│<a href="https://steamcommunity.com/id/thaszprofile/">    STEAM     </a>│
                    └───────────────────────────────────────────┘
                    <div style="display: flex; flex-direction: column; align-items: center;">
                     <pre style="margin-bottom: 5px; background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> 
@@ -69,47 +85,64 @@
  /_/   /_/_/ /_/\__,_/_/____/  /____/\__,_/_/ /_/\___/\__/\__,_/\__,_/_/   \__, /  
                                                                           /____/ 
                     </pre>
-                    <img src="img/kugi.gif" width="300" style="border-radius: 10px; margin-bottom: 10px;">
+                    <img src="img/cat_spin.gif" width="300" style="border-radius: 10px;">
                   </div>
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │ 
-│  <span class="highlight">GREETINGS! MY NAME IS THASZ AKA 'FINAL'</span>                                     │ 
-│                                                                              │ 
+│                                                                              │
+│  <span class="highlight">GREETINGS! MY NAME IS THASZ AKA '<a href="https://finalfantasy.fandom.com/wiki/Final_Heaven_(Final_Fantasy_VII)">FINAL</a>'</span>                                     │
+│                                                                              │
 │  I'm a big fan of CyberSecurity, Mechanical Keyboards, Motor sports,         │
-│  Aviation, and Hi-Fi Audio.                                                  │
+│  Aviation, and Hi-Fi Audio, and Athletics. Proud owner of an IBM <a href="https://en.wikipedia.org/wiki/Model_M_keyboard" target="_blank">Model M</a>     │
+│                                                                              │
+│  In my <a href="blog_dir/blog.html">blog</a> I have some small writeups related to various                    │
+│  things like tech, games, and news                                           │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                                                                              │
 │  <span class="highlight">RECENTLY BEEN USING:</span>                                                        │
-│                                                                              │ 
+│                                                                              │
 │  Splunk, QRadar, Devo, Azure Sentinel One and Defender for Endpoints,        │
 │  LogRhythm, Carbon Black, and CrowdStrike.                                   │
 │                                                                              │
 │  I have been trying get the hang of Google Chronicle Cloud Platform          │
-│                                                                              │ 
+│                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                                                                              │
 │  <span class="highlight">COOL LINKS?</span>                                                                 │
-│                                                                              │ 
-│  Email encryption standing the test of time: [<a href="https://www.openpgp.org/"> OpenPGP </a>]                     │
 │                                                                              │
-│  Block Invisible trackers: [<a href="https://privacybadger.org/"> Privacy Badger </a>]                                │ 
+│  Email encryption standing the test of time: [<a href="https://www.openpgp.org/" target="_blank"> OpenPGP </a>]                     │
 │                                                                              │
-│  Open-source ad blocker:   [<a href="https://ublockorigin.com/"> uBlock </a>]                                        │
+│  Squid Balisongs:          [<a href="https://www.squidindustries.co/" target="_blank"> Squid Industries </a>]                              │
 │                                                                              │
-│  Free Photoshop:           [<a href="https://www.photopea.com/"> Photopea </a>]                                      │
-│                                                                              │ 
-│  Burner Emails:            [<a href=https://temp-mail.org/en/"> Temp Mail </a>]                                     │   
-│                                                                              │ 
-└──────────────────────────────────────────────────────────────────────────────┘ 
-</pre></div>
+│  Block Invisible trackers: [<a href="https://privacybadger.org/" target="_blank"> Privacy Badger </a>]                                │
+│                                                                              │
+│  Open-source ad blocker:   [<a href="https://ublockorigin.com/" target="_blank"> uBlock </a>]                                        │
+│                                                                              │
+│  Free Photoshop:           [<a href="https://www.photopea.com/" target="_blank"> Photopea </a>]                                      │
+│                                                                              │
+│  Burner Emails:            [<a href="https://temp-mail.org/en/" target="_blank"> Temp Mail </a>]                                     │
+│                                                                              │
+│  Staple IEM's:             [<a href="https://www.thieaudio.com/" target="_blank"> THIEAUDIO </a>]                                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-    </center>
-	</div>
-  </body>
-
+</pre>
+    </div>
+      <div class="image-container">
+        <img src="img/thieaudio.webp" alt="Footer Image">
+        <img src="img/fiio_logo.png" alt="Footer Image">
+        <img src="img/ibm.png" alt="Footer Image">
+        <img src="img/logo2.jpg" alt="Footer Image">
+        <img src="img/phantomGif.gif" alt="Footer Image">
+        <img src="img/CS.png" alt="Footer Image">
+        <img src="img/wrc_white.png" alt="Footer Image">
+        <img src="img/gmmk.jpg" alt="Footer Image">
+      </div>
+    </div>
+  </center>
+</body>
 </html>
