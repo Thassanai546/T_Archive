@@ -88,6 +88,23 @@
         border-radius: 20%;
         overflow: hidden; /* Used at end of page */
       }
+
+      .image-button {
+        border:none;
+        cursor: pointer;
+        overflow: hidden;
+        display: inline-block;
+        background-color: #0c0d10;
+      }
+
+      .image-button img {
+        transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .image-button:hover img {
+        transform: scale(1.1);
+      }
+
     </style>
   </head>
 
@@ -95,12 +112,12 @@
     <center>
       <div class="container">
         <div style="display: inline-block; text-align: left">
-          <pre><center><img src="img/Avatar of the Accursed King - Idle.gif" width="250"/>  </center>
+          <pre><center><img src="img/Avatar of the Accursed King - Idle.gif" width="250"/>      </center>
                  ┌───────────────────────────────────────────┐
                  │<a href="blog_dir/blog.html">    BLOG    </a> │<a href="https://github.com/Thassanai546">    GITHUB    </a>│<a href="https://steamcommunity.com/id/thaszprofile/">    STEAM     </a>│
                  └───────────────────────────────────────────┘
 <div style="display: flex; flex-direction: column; align-items: center;">
-                    <pre style="margin-bottom: 5px; background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    <pre style="margin-bottom: 5px; background: linear-gradient(to right, #ff00ff, #00ffff, #efcbff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
     _______             __                              __                        
    / ____(_)___  ____ _/ /____   _________ _____  _____/ /___  ______ ________  __
   / /_  / / __ \/ __ `/ / ___/  / ___/ __ `/ __ \/ ___/ __/ / / / __ `/ ___/ / / /
@@ -123,9 +140,9 @@
 │                                                                              │
 │  <span class="highlight2">//Mechanicals</span>                                                               │
 │  > Proud owner of an IBM <a href="https://en.wikipedia.org/wiki/Model_M_keyboard" target="_blank">Model M</a> !                                           │
-│  > GMMK PRO 75% w/ Holy Panda switches                                       │
+│  > GMMK PRO 75% w/ Holy Panda switches (Drop)                                │
 │  > Keychron V10 (Alice Layout) w/ Pro Brown switches                         │
-│  > Ducky One 2 Mini w/ MX Reds                                               │
+│  > Ducky One 2 Mini (60%) w/ MX Reds                                         │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 
@@ -134,9 +151,9 @@
 │  <span class="highlight">RECENTLY BEEN USING:</span>                                                        │
 │                                                                              │
 │  Splunk, QRadar, Devo, Azure Sentinel One and Defender for Endpoints,        │
-│  LogRhythm, Carbon Black, and CrowdStrike.                                   │
+│  Carbon Black, and CrowdStrike.                                              │
 │                                                                              │
-│  I have been trying get the hang of Google Chronicle Cloud Platform          │
+│  Me and LogRhythm do not get along                                           │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 
@@ -178,6 +195,8 @@
   <br />
   <center>
     <pre>Wanna hack? <a href="https://shop.hak5.org/">Hak5</a> | <a href="https://www.hackthebox.com/">Hack the Box</a> | <a href="https://tryhackme.com/">THM</a> | <a href="https://github.com/payloadbox/sql-injection-payload-list">SQLI Payloads</a></pre>
+    <pre>────────────────────────────────────────────────────────────────────────────────</pre>
+    <button class="image-button"><a href="FF_Corner.html"><img src="img/ff_menu_gif.gif" width="250px"></a></button>
   </center>
   <br />
   </body>
