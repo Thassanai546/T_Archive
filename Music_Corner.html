@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+  https://bendodson.com/projects/itunes-artwork-finder/
+  https://www.canvasdownloader.co
+  -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Corner</title>
+    <link rel="icon" type="image/png" href="img/Static_sanctuary.png" />
+    <style>
+      :root {
+        --text-color: #fefefe;
+        --bg-color: #0c0d10;
+        --link-color: #edfc27;
+        --font-family-main: "gohu", "Lucida Console", monospace, Monaco;
+      }
+
+      body {
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      @font-face {
+        font-family: "gohu";
+        src: url("gohu.woff") format("woff");
+      }
+
+      pre {
+        font-family: var(--font-family-main);
+        font-size: 1rem; /* Scalable unit */
+        line-height: 1.2;
+        -webkit-text-size-adjust: 140%;
+      }
+
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+
+      .intro {
+        font-family: var(--font-family-main);
+        font-size: 1rem;
+        line-height: 1.4;
+        -webkit-text-size-adjust: 140%;
+        width: 70%;
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 1200px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header pre {
+        margin: 0;
+      }
+
+      .album {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+        gap: 20px;
+      }
+
+      .album figure {
+        text-align: center;
+      }
+
+      .album img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .album figcaption {
+        margin-top: 10px;
+        font-family: var(--font-family-main);
+        font-size: 1rem;
+        color: var(--link-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <center>
+        <div class="intro">
+          <a href="index.html"><-- Back</a><br /><br />
+          Collection of albums and singles that I have been liking
+        </div>
+        <br /><br />
+      </center>
+
+      <center>
+        <div class="canvas">
+          <img src="https://i.imgur.com/MGnmKUM.gif" height="350px"/>
+          <img src="https://i.imgur.com/2B5VwUV.gif" height="350px"/>
+          <img src="https://i.imgur.com/TVXudEj.gif" height="350px"/>
+          <img src="https://i.imgur.com/eOguAWV.gif" height="350px"/>
+          <img src="https://i.imgur.com/jYlFwuQ.gif" height="350px"/>
+        </div>
+      </center>
+      <br /><br /><br />
+      <div class="album">
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0f/b0/5a/0fb05adc-3847-4e07-3fe7-3cf9eb898e4d/093624946793.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>
+            Koi No Yokan - Deftones| 2012<br />
+            translating to "premonition of love"
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/d7/0e/72/d70e724e-d8c0-8043-516a-ba47299b1554/PA00136839_1_185077_jacket.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>
+            P3R - Atlus| 2024<br />- Memories of You<br />- Color your Night
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3a/99/e9/3a99e97f-c097-71a2-52cc-f423d538940e/198391606878.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>New World Depression - Suicideboys | 2024</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>SOS - SZA | 2024</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ce/5d/c6/ce5dc65e-6dac-bb8a-daaf-72bf77d0ba75/616450974909.png/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>Time - Mr.Kitty | 2014<br />- After Dark</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c9/ca/6b/c9ca6b51-87a9-4a13-d37f-24535687023d/23UMGIM63882.rgb.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>
+            Spider-Man: Across the Spider-Verse - Metro Boomin | 2023<br />- Am
+            I Dreaming<br />Self Love
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c6/a6/13/c6a613c5-9173-545e-4682-a6edc3533bc6/artwork.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>
+            You're Not Gone, You're Just Dead! - Single (by VIOLENT VIRA) | 2023
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1c/0f/81/1c0f818a-e458-dd84-6f1b-ccbdf5fe14d6/825646291045.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>Demon Days - Gorillaz | 2005</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e4/84/c6/e484c611-660c-1250-d271-ab8569134c1b/TFCC-86625WW.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>THANK YOU BLUE - Daoko | 2017<br />Fireworks</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c1/17/44/c11744c6-ed71-165c-071e-c9c0c205799d/054391907851.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>
+            The Perfect Girl - Mareux | 2021<br />Fireworks
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b0/89/4f/b0894f0c-f1e9-40dd-1dfa-5e3ef19e51f2/4571614691206.jpg/600x600bb.jpg"
+            loading="lazy"
+          />
+          <figcaption>Pippara no Ki no Shita de - nano.RIPE | 2018</figcaption>
+        </figure>
+      </div>
+    </div>
+  </body>
+</html>
